@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="SnackbarStyle">
+    <attr name="android:textColor"/>
+    <attr name="android:background"/>
+  </declare-styleable>
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.prolificinteractive.configurations.ui.MainActivity"
+    >
+  <data>
+    <variable
+        type="com.prolificinteractive.configurations.binding.configurations.EmptyViewConfiguration"
+        name="emptyView"
+        />
+    <variable
+        type="com.prolificinteractive.configurations.binding.configurations.SnackbarConfiguration"
+        name="snackbar"
+        />
+    <variable
+        type="com.prolificinteractive.configurations.binding.configurations.ToolbarConfiguration"
+        name="toolbar"
+        />
+    <variable
+        type="com.prolificinteractive.configurations.binding.configurations.ProgressWithTextConfiguration"
+        name="progress"
+        />
+    <variable
+        type="com.prolificinteractive.configurations.binding.configurations.RecyclerViewConfiguration"
+        name="recyclerView"
+        />
+  </data>
+  <android.support.design.widget.CoordinatorLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      bind:snackbar="@{snackbar}"
+      >
+
+    <include
+        layout="@layout/include_toolbar"
+        android:id="@+id/toolbar_layout"
+        bind:config="@{toolbar}"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="@{recyclerView.visible}"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        bind:config="@{recyclerView}"
+        tools:listitem="@layout/item_text"
+        />
+
+    <include
+        layout="@layout/include_empty_view"
+        bind:config="@{emptyView}"
+        />
+
+    <include
+        layout="@layout/include_progress_with_text"
+        bind:config="@{progress}"
+        />
+  </android.support.design.widget.CoordinatorLayout>
+</layout>

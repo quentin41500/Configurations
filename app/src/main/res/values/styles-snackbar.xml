@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="Snackbar">
+    <item name="android:textColor">@android:color/white</item>
+  </style>
+
+  <style name="Snackbar.Alert">
+    <item name="android:background">@android:color/holo_red_dark</item>
+  </style>
+
+  <style name="Snackbar.Confirm">
+    <item name="android:background">@android:color/holo_green_dark</item>
+  </style>
+
+  <style name="Snackbar.Neutral">
+    <item name="android:background">@android:color/holo_blue_light</item>
+  </style>
+</resources>
