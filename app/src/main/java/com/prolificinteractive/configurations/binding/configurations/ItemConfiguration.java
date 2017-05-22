@@ -12,5 +12,6 @@ public final class ItemConfiguration extends BaseObservable {
 
   public void setConfig(final String text) {
     this.text = text;
+    notifyChange();
   }
 }

@@ -2,14 +2,15 @@ package com.prolificinteractive.configurations.binding.configurations;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
+import android.util.Log;
 import com.prolificinteractive.configurations.BR;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import java.util.concurrent.TimeUnit;
-import timber.log.Timber;
 
 public class ProgressWithTextConfiguration extends BaseObservable {
+  private static final String TAG = ProgressWithTextConfiguration.class.getSimpleName();
 
   /**
    * You can keep this a constant or set it programmatically.
@@ -39,7 +40,7 @@ public class ProgressWithTextConfiguration extends BaseObservable {
           .subscribe(ignore -> {
             isTextVisible = true;
             notifyPropertyChanged(BR.textVisible);
-          }, error -> Timber.e(error, "error delay"));
+          }, error -> Log.e(TAG, "error delay", error));
     } else {
       dispose();
     }

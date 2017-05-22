@@ -2,12 +2,13 @@ package com.prolificinteractive.configurations.binding.configurations;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
+import android.util.Log;
 import com.prolificinteractive.configurations.BR;
 import io.reactivex.Observable;
 import io.reactivex.functions.Function;
-import timber.log.Timber;
 
 public class EditTextConfiguration extends BaseObservable {
+  private static final String TAG = EditTextConfiguration.class.getSimpleName();
 
   @Bindable public boolean errorEnabled = false;
   @Bindable public String errorText = null;
@@ -25,10 +26,10 @@ public class EditTextConfiguration extends BaseObservable {
         .filter(isNotValid -> isNotValid)
         .subscribe(
             isNotValid -> {
-              Timber.e("validate error");
+              Log.e(TAG, "validate error");
               setError(message);
             },
-            error -> Timber.e(error, "error validating field")
+            error -> Log.e(TAG, "error validating field", error)
         );
   }
 

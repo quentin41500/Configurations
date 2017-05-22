@@ -16,6 +16,6 @@
   <string name="cancel">Cancel</string>
   <string name="ok">OK</string>
   <string name="yes">Yes</string>
-  <string name="already_leaving">Leaving So Soon?</string>
+  <string name="already_leaving">Leaving so soon?</string>
   <string name="already_leaving_msg">Are you sure it\'s time for you to leave?</string>
 </resources>

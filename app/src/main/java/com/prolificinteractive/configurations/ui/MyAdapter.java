@@ -1,8 +1,10 @@
 package com.prolificinteractive.configurations.ui;
 
+import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import com.prolificinteractive.configurations.R;
 import com.prolificinteractive.configurations.binding.configurations.ItemConfiguration;
 import com.prolificinteractive.configurations.databinding.ItemTextBinding;
 import java.util.ArrayList;
@@ -13,8 +15,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
   private final List<String> items = new ArrayList<>();
 
   @Override public MyViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
-    return new MyViewHolder(ItemTextBinding.inflate(
+    return new MyViewHolder(DataBindingUtil.inflate(
         LayoutInflater.from(parent.getContext()),
+        R.layout.item_text,
         parent,
         false
     ));

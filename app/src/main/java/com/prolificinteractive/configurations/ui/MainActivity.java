@@ -39,24 +39,11 @@ public class MainActivity extends AppCompatActivity {
 
     setSupportActionBar(binding.toolbarLayout.toolbar);
 
-    // Mock list
-    final ArrayList<String> items = new ArrayList<>();
-    items.add("Check");
-    items.add("The");
-    items.add("Options");
-    items.add("In");
-    items.add("The");
-    items.add("Menu");
-    items.add("Of");
-    items.add("The");
-    items.add("Toolbar");
-    items.add("!!");
-    adapter.swapData(items);
-
-    binding.setRecyclerView(recyclerView);
+    binding.setRecyclerViewConfig(recyclerView);
     binding.setSnackbar(snackbar);
     binding.setEmptyView(emptyView);
     binding.setProgress(progress);
+    binding.setToolbar(toolbar);
   }
 
   @Override
@@ -71,6 +58,20 @@ public class MainActivity extends AppCompatActivity {
 
     recyclerView.setConfig(new LinearLayoutManager(this), adapter);
     toolbar.setConfig(getString(R.string.app_name), v -> terminate());
+
+    // Mock list
+    final ArrayList<String> items = new ArrayList<>();
+    items.add("Check");
+    items.add("The");
+    items.add("Options");
+    items.add("In");
+    items.add("The");
+    items.add("Menu");
+    items.add("Of");
+    items.add("The");
+    items.add("Toolbar");
+    items.add("!!");
+    adapter.swapData(items);
   }
 
   @Override
@@ -127,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
     progress.setLoading(false);
     emptyView.show();
+    recyclerView.hide();
   }
 
   private void empty() {
@@ -137,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
 
     progress.setLoading(false);
     emptyView.show();
+    recyclerView.hide();
   }
 
   private void terminate() {

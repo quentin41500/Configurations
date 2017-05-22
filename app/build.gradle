@@ -47,6 +47,5 @@ dependencies {
   rootProject.supportLibs.each { compile it }
   rootProject.rxLibs.each { compile it }
 
-  compile rootProject.timber
   compile rootProject.jUnit
 }
